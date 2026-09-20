@@ -11,9 +11,14 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      colors: {
+      /* `base`/`base-alt` live here, NOT in `colors`: a colour named `base`
+         would generate `.text-base { color: … }`, which overrides Tailwind's
+         `text-base` font-size utility and paints text in the page colour. */
+      backgroundColor: {
         base: token('--c-base'),
         'base-alt': token('--c-base-alt'),
+      },
+      colors: {
         surface: token('--c-surface'),
         'surface-2': token('--c-surface-2'),
         line: token('--c-line'),
@@ -29,7 +34,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Inter var"', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-        display: ['"Inter var"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Space Grotesk"', '"Inter var"', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       fontSize: {

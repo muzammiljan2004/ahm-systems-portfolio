@@ -35,6 +35,13 @@
     @apply text-pretty;
   }
 
+  /* Native select popups are OS-drawn; these two are the only properties
+     Chrome/Edge honour, and without them options render OS-grey. */
+  option {
+    background-color: rgb(var(--c-surface));
+    color: rgb(var(--c-ink));
+  }
+
   ::selection {
     background: rgb(var(--c-primary) / 0.3);
     color: rgb(var(--c-ink));

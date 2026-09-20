@@ -177,15 +177,14 @@ export const toolGroups: ToolGroup[] = [
 
 /** Options for the contact form's service dropdown. */
 export const serviceEnquiryOptions = [
-  'Lead Intel',
-  'Lead Generation',
-  'Setter',
-  'Closer',
   'Web Development',
-  'Automation',
-  'CRM',
+  'Mobile App Development',
+  'Custom Software',
   'AI Solutions',
-  'UI/UX',
+  'AI Agents & Chatbots',
+  'Automation',
+  'CRM Development',
+  'UI/UX Design',
   'Other',
 ] as const;
 
