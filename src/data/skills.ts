@@ -1,5 +1,5 @@
 import {
-  Radar,
+  Smartphone,
   Code2,
   Workflow,
   Sparkles,
@@ -11,15 +11,14 @@ import {
 /* ============================================================================
  * SKILLS / CAPABILITIES
  * ----------------------------------------------------------------------------
- * The six areas the company works in. `flagship: true` marks Lead Intel as the
- * core offering — it gets the wider card and the accent treatment.
+ * The six areas the company works in. `flagship: true` marks the core
+ * offering — it gets the wider card and the accent treatment.
  *
  * Add, remove or reorder freely: the Skills section, the footer list and the
  * contact form dropdown all read from here.
  * ==========================================================================*/
 
 export interface SkillArea {
-  number: string;
   /** Stable key, also used as the DOM id for the expandable panel. */
   id: string;
   title: string;
@@ -35,28 +34,6 @@ export interface SkillArea {
 
 export const skillAreas: SkillArea[] = [
   {
-    number: '01',
-    id: 'lead-intel',
-    title: 'Lead Intel',
-    summary:
-      'Research, verify and qualify the accounts worth your sales team’s time — then book the conversations.',
-    description:
-      'Our core discipline. We define the ideal customer profile, research matching businesses and decision-makers, verify the underlying data, qualify intent, and run the outreach that turns a name on a list into a booked conversation. Everything lands in your CRM in a structure your team can work.',
-    capabilities: [
-      'Lead generation',
-      'Lead research',
-      'Lead verification',
-      'Lead qualification',
-      'Setter operations',
-      'Closer operations',
-      'CRM management',
-      'Sales intelligence',
-    ],
-    icon: Radar,
-    flagship: true,
-  },
-  {
-    number: '02',
     id: 'web-development',
     title: 'Web Development',
     summary: 'Websites, platforms and applications built to load fast and keep working as you grow.',
@@ -71,9 +48,25 @@ export const skillAreas: SkillArea[] = [
       'API integrations',
     ],
     icon: Code2,
+    flagship: true,
   },
   {
-    number: '03',
+    id: 'mobile-app-development',
+    title: 'Mobile App Development',
+    summary: 'iOS and Android apps that ship, update cleanly and hold up once real users arrive.',
+    description:
+      'Cross-platform builds where one codebase is the right call, native where it is not. We handle the whole path — store submission, release process, crash reporting and the backend the app talks to — so the launch is not the point where things stall.',
+    capabilities: [
+      'iOS & Android apps',
+      'React Native',
+      'Cross-platform builds',
+      'App store releases',
+      'Push notifications',
+      'Offline-first data',
+    ],
+    icon: Smartphone,
+  },
+  {
     id: 'business-automation',
     title: 'Business Automation',
     summary: 'Map the repetitive work, then remove it — handoffs, follow-ups, reporting and routing.',
@@ -90,7 +83,6 @@ export const skillAreas: SkillArea[] = [
     icon: Workflow,
   },
   {
-    number: '04',
     id: 'ai-solutions',
     title: 'AI Solutions',
     summary: 'Applied where it measurably beats the manual alternative — qualification, support, documents.',
@@ -107,7 +99,6 @@ export const skillAreas: SkillArea[] = [
     icon: Sparkles,
   },
   {
-    number: '05',
     id: 'crm-sales-systems',
     title: 'CRM & Sales Systems',
     summary: 'Pipelines, dashboards and lead management that match how your team actually sells.',
@@ -124,7 +115,6 @@ export const skillAreas: SkillArea[] = [
     icon: KanbanSquare,
   },
   {
-    number: '06',
     id: 'ui-ux-design',
     title: 'UI/UX Design',
     summary: 'Interfaces and design systems that make complex products feel obvious to use.',

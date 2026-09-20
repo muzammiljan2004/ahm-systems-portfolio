@@ -13,7 +13,7 @@ import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
  * (button + aria-expanded + aria-controls) rather than a hover-only reveal, so
  * it works on touch and with a keyboard.
  */
-function SkillCard({ skill }: { skill: SkillArea }) {
+function SkillCard({ skill, index }: { skill: SkillArea; index: number }) {
   const [open, setOpen] = useState(false);
   const reduced = usePrefersReducedMotion();
   const Icon = skill.icon;
@@ -62,7 +62,9 @@ function SkillCard({ skill }: { skill: SkillArea }) {
               Core
             </span>
           ) : null}
-          <span className="font-mono text-[0.75rem] text-subtle">{skill.number}</span>
+          <span className="font-mono text-[0.75rem] text-subtle">
+            {String(index + 1).padStart(2, '0')}
+          </span>
         </span>
       </div>
 
@@ -153,19 +155,19 @@ export function Skills() {
               What we <span className="text-gradient-accent">actually do.</span>
             </span>
           }
-          description="Six areas, with Lead Intel at the centre. Everything else exists to make the pipeline it creates easier to run and harder to lose."
+          description="Six areas, built around development and AI. Each one exists to get a product shipped and keep it working once real users arrive."
         />
 
         <Stagger
           className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
           stagger={0.07}
         >
-          {skillAreas.map((skill) => (
+          {skillAreas.map((skill, index) => (
             <RevealItem
               key={skill.id}
               className={cn(skill.flagship && 'md:col-span-2 lg:col-span-2')}
             >
-              <SkillCard skill={skill} />
+              <SkillCard skill={skill} index={index} />
             </RevealItem>
           ))}
         </Stagger>

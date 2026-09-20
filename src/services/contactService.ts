@@ -69,6 +69,8 @@ function buildRequest(payload: EnquiryPayload): RequestInit {
       // FormSubmit settings (ignored by other endpoints).
       _subject: `New enquiry via ${siteConfig.brand.name}${payload.name ? ` — ${payload.name}` : ''}`,
       _template: 'table',
+      // Replying in the inbox answers the enquirer, not the relay.
+      _replyto: payload.email,
       _captcha: 'false',
     }),
   };

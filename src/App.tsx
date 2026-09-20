@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CursorGlow } from '@/components/CursorGlow';
 import { NoiseOverlay } from '@/components/AnimatedBackground';
+import { VersionWatcher } from '@/components/VersionWatcher';
 import { Home } from '@/pages/Home';
 import { NotFound } from '@/pages/NotFound';
 import { useTheme } from '@/hooks/useTheme';
@@ -46,6 +47,7 @@ export function App() {
       </main>
 
       <Footer />
+      <VersionWatcher />
     </>
   );
 }
