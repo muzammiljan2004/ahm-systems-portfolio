@@ -8,9 +8,11 @@ import type { BudgetRange, ServiceEnquiry } from '@/data/skills';
  * That keeps the UI unaware of where enquiries go, so you can point this at a
  * real backend without touching a component.
  *
- * ⚠️ NOT CONNECTED BY DEFAULT. `siteConfig.contact.formEndpoint` is null, so
- * the form runs in "preview mode": it validates fully, then reports that no
- * endpoint is configured instead of pretending an email was sent.
+ * Currently wired to FormSubmit, which emails every enquiry to
+ * siteConfig.contact.email. FormSubmit sends a one-time activation link to
+ * that inbox on the first submission — click it or nothing gets delivered.
+ * Set `formEndpoint` to null to fall back to "preview mode" (validates, sends
+ * nothing).
  *
  * TO CONNECT IT
  * -------------
@@ -63,8 +65,11 @@ function buildRequest(payload: EnquiryPayload): RequestInit {
       budget: payload.budget,
       message: payload.message,
       // Useful context for whoever picks the enquiry up.
-      _source: siteConfig.brand.name,
-      _submittedAt: new Date().toISOString(),
+      submittedAt: new Date().toISOString(),
+      // FormSubmit settings (ignored by other endpoints).
+      _subject: `New enquiry via ${siteConfig.brand.name}${payload.name ? ` — ${payload.name}` : ''}`,
+      _template: 'table',
+      _captcha: 'false',
     }),
   };
 }

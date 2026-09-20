@@ -75,6 +75,20 @@ export function Contact() {
                           <span>{contact.phone}</span>
                         </span>
                       </a>
+                      {contact.phonesAlt.length ? (
+                        <ul className="mt-2 flex flex-col gap-1 pl-11 text-[0.8125rem] text-subtle">
+                          {contact.phonesAlt.map((number) => (
+                            <li key={number}>
+                              <a
+                                href={`tel:${number.replace(/[^+\d]/g, '')}`}
+                                className="transition-colors hover:text-ink"
+                              >
+                                {number}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </li>
                   ) : null}
 

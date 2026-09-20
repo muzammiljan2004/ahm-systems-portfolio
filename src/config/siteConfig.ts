@@ -67,9 +67,11 @@ export const siteConfig = {
 
   /* -------------------------------------------------------------- contact */
   contact: {
-    email: 'hello@ahmsystem.com',
+    email: 'ahmsystemm@gmail.com',
     /** Shown as-is; set to null to hide the phone row entirely. */
-    phone: '+1 (000) 000-0000',
+    phone: '+92 311 5732602',
+    /** Additional numbers listed under the primary one. */
+    phonesAlt: ['+92 310 5126562', '+92 344 5266629'],
     address: {
       line1: 'Remote-first',
       line2: 'Serving clients worldwide',
@@ -83,7 +85,7 @@ export const siteConfig = {
      * "preview mode" — it validates fully but does not transmit anything.
      * See src/services/contactService.ts for wiring instructions.
      */
-    formEndpoint: null as string | null,
+    formEndpoint: 'https://formsubmit.co/ajax/ahmsystemm@gmail.com' as string | null,
   },
 
   /* --------------------------------------------------------------- social */

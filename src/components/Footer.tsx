@@ -142,6 +142,15 @@ export function Footer() {
                     <Phone className="mt-[0.15rem] h-3.5 w-3.5 shrink-0 text-subtle" aria-hidden="true" />
                     {contact.phone}
                   </a>
+                  {contact.phonesAlt.map((number) => (
+                    <a
+                      key={number}
+                      href={`tel:${number.replace(/[^+\d]/g, '')}`}
+                      className="mt-1.5 block pl-6 text-[0.8125rem] text-subtle transition-colors duration-300 hover:text-ink"
+                    >
+                      {number}
+                    </a>
+                  ))}
                 </li>
               ) : null}
               <li className="flex items-start gap-2.5 text-muted">
