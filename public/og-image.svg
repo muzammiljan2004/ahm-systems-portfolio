@@ -1,0 +1,46 @@
+<!-- Open Graph card (1200x630) for AHM Systems. Replace with a PNG/JPG export
+     for best compatibility — some platforms do not render SVG OG images. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05060B" />
+      <stop offset="100%" stop-color="#0B0E1A" />
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4C7DFF" />
+      <stop offset="55%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#4C7DFF" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#4C7DFF" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <g transform="translate(88, 96)">
+    <rect width="56" height="56" rx="14" fill="url(#mark)" />
+    <g transform="scale(1.75)" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M6 24.5 L12 8 L16 19 L20 8 L26 24.5" />
+      <path d="M12 8 H20" />
+    </g>
+    <text x="76" y="39" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="600" fill="#E9ECF5" letter-spacing="-0.5">AHM Systems</text>
+  </g>
+
+  <text x="88" y="290" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="600" fill="#E9ECF5" letter-spacing="-2.5">Engineering</text>
+  <text x="88" y="372" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="600" fill="#6E9BFF" letter-spacing="-2.5">Digital Solutions.</text>
+
+  <text x="88" y="446" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#9AA3B8">Software · Web · Mobile · Automation · Applied AI</text>
+
+  <g transform="translate(88, 512)" font-family="Inter, system-ui, sans-serif" font-size="19" fill="#8089A0">
+    <rect x="0" y="-26" width="186" height="42" rx="21" fill="#4C7DFF" fill-opacity="0.12" stroke="#4C7DFF" stroke-opacity="0.35" />
+    <text x="26" y="2" fill="#6E9BFF" font-weight="500">AHM SYSTEMS</text>
+    <text x="212" y="2">Software &amp; Technology</text>
+  </g>
+</svg>

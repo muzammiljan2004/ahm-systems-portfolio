@@ -1,0 +1,12 @@
+{
+  "name": "AHM Systems",
+  "short_name": "AHM",
+  "description": "AHM Systems — engineering digital solutions: modern websites, mobile applications and custom software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060B",
+  "theme_color": "#05060B",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

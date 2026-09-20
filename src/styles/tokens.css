@@ -1,0 +1,71 @@
+/* ==========================================================================
+   DESIGN TOKENS — the single source of truth for the visual system.
+   Change the values here to re-skin the entire website.
+   Colours are stored as space separated RGB channels so Tailwind can apply
+   opacity modifiers (e.g. `bg-primary/20`).
+   ========================================================================== */
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* --- Surfaces --------------------------------------------------------- */
+  --c-base: 5 6 11; /* page background, near-black */
+  --c-base-alt: 9 11 18; /* alternating band background */
+  --c-surface: 16 19 29; /* raised cards */
+  --c-surface-2: 23 27 40; /* nested / hovered cards */
+  --c-line: 31 36 51; /* hairline borders */
+  --c-line-strong: 48 55 76;
+
+  /* --- Text ------------------------------------------------------------- */
+  --c-ink: 233 236 245;
+  --c-muted: 154 163 184;
+  --c-subtle: 128 137 159;
+
+  /* --- Accents ---------------------------------------------------------- */
+  --c-primary: 76 125 255; /* electric blue */
+  --c-violet: 139 92 246;
+  --c-cyan: 34 211 238;
+  --c-success: 52 211 153;
+  --c-danger: 248 113 113;
+
+  /* --- Effects ---------------------------------------------------------- */
+  --glass-bg: rgb(255 255 255 / 0.035);
+  --glass-border: rgb(255 255 255 / 0.08);
+  --grid-line: rgb(255 255 255 / 0.035);
+  --noise-opacity: 0.035;
+  --nav-bg: rgb(5 6 11 / 0.72);
+
+  /* --- Motion ----------------------------------------------------------- */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --c-base: 247 248 252;
+  --c-base-alt: 255 255 255;
+  --c-surface: 255 255 255;
+  --c-surface-2: 244 246 251;
+  --c-line: 225 229 239;
+  --c-line-strong: 203 210 226;
+
+  --c-ink: 11 14 24;
+  --c-muted: 82 91 112;
+  --c-subtle: 122 131 152;
+
+  --c-primary: 42 90 233;
+  --c-violet: 113 63 226;
+  --c-cyan: 13 159 185;
+  --c-success: 13 148 106;
+  --c-danger: 218 63 63;
+
+  --glass-bg: rgb(255 255 255 / 0.7);
+  --glass-border: rgb(11 14 24 / 0.08);
+  --grid-line: rgb(11 14 24 / 0.05);
+  --noise-opacity: 0.02;
+  --nav-bg: rgb(247 248 252 / 0.78);
+}

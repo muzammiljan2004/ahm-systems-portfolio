@@ -1,0 +1,7 @@
+# AHM Systems — update the Sitemap host before going live.
+User-agent: *
+Allow: /
+
+# Block nothing by default. Add Disallow rules here for staging paths.
+
+Sitemap: https://ahmsystem.com/sitemap.xml
