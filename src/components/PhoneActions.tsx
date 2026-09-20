@@ -29,16 +29,19 @@ export function PhoneActions({ number, muted = false, className }: PhoneActionsP
   return (
     <span className={cn('flex flex-wrap items-center gap-x-2 gap-y-1.5', className)}>
       <span className={muted ? 'text-[0.8125rem] text-subtle' : undefined}>{number}</span>
-      <a href={`tel:+${digits(number)}`} className={chip}>
-        <PhoneCall className="h-3 w-3" aria-hidden="true" />
-        Call
-        <span className="sr-only"> {number}</span>
-      </a>
-      <a href={waHref(number)} target="_blank" rel="noopener noreferrer" className={chip}>
-        <MessageCircle className="h-3 w-3" aria-hidden="true" />
-        WhatsApp
-        <span className="sr-only"> {number}</span>
-      </a>
+      {/* Both chips wrap together, so a narrow column never splits the pair. */}
+      <span className="inline-flex items-center gap-2">
+        <a href={`tel:+${digits(number)}`} className={chip}>
+          <PhoneCall className="h-3 w-3" aria-hidden="true" />
+          Call
+          <span className="sr-only"> {number}</span>
+        </a>
+        <a href={waHref(number)} target="_blank" rel="noopener noreferrer" className={chip}>
+          <MessageCircle className="h-3 w-3" aria-hidden="true" />
+          WhatsApp
+          <span className="sr-only"> {number}</span>
+        </a>
+      </span>
     </span>
   );
 }

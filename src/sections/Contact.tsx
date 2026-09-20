@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/siteConfig';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ContactForm } from '@/components/ContactForm';
 import { Reveal } from '@/components/Reveal';
+import { PhoneActions } from '@/components/PhoneActions';
 import { GridBackdrop, GradientBlob } from '@/components/AnimatedBackground';
 
 export function Contact() {
@@ -60,35 +61,19 @@ export function Contact() {
                   </li>
 
                   {siteConfig.features.showPhone && contact.phone ? (
-                    <li>
-                      <a
-                        href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`}
-                        className="group flex items-start gap-3 text-muted transition-colors hover:text-ink"
-                      >
-                        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-line bg-base/60 text-primary transition-colors group-hover:border-primary/40">
-                          <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                    <li className="flex items-start gap-3 text-muted">
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-line bg-base/60 text-primary">
+                        <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                      </span>
+                      <span className="flex min-w-0 flex-col gap-2 leading-tight">
+                        <span className="text-[0.6875rem] uppercase tracking-[0.1em] text-subtle">
+                          Phone
                         </span>
-                        <span className="flex flex-col leading-tight">
-                          <span className="text-[0.6875rem] uppercase tracking-[0.1em] text-subtle">
-                            Phone
-                          </span>
-                          <span>{contact.phone}</span>
-                        </span>
-                      </a>
-                      {contact.phonesAlt.length ? (
-                        <ul className="mt-2 flex flex-col gap-1 pl-11 text-[0.8125rem] text-subtle">
-                          {contact.phonesAlt.map((number) => (
-                            <li key={number}>
-                              <a
-                                href={`tel:${number.replace(/[^+\d]/g, '')}`}
-                                className="transition-colors hover:text-ink"
-                              >
-                                {number}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
+                        <PhoneActions number={contact.phone} />
+                        {contact.phonesAlt.map((number) => (
+                          <PhoneActions key={number} number={number} muted />
+                        ))}
+                      </span>
                     </li>
                   ) : null}
 

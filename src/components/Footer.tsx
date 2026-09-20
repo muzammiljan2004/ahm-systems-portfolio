@@ -3,6 +3,7 @@ import { siteConfig, type SocialPlatform } from '@/config/siteConfig';
 import { skillAreas } from '@/data/skills';
 import { cn, scrollToSection } from '@/lib/utils';
 import { Logo } from './Logo';
+import { PhoneActions } from './PhoneActions';
 import { GridBackdrop } from './AnimatedBackground';
 
 /** Inline X/Twitter glyph — lucide has no current X mark. */
@@ -134,23 +135,14 @@ export function Footer() {
                 </a>
               </li>
               {siteConfig.features.showPhone && contact.phone ? (
-                <li>
-                  <a
-                    href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`}
-                    className="inline-flex items-start gap-2.5 text-muted transition-colors duration-300 hover:text-ink"
-                  >
-                    <Phone className="mt-[0.15rem] h-3.5 w-3.5 shrink-0 text-subtle" aria-hidden="true" />
-                    {contact.phone}
-                  </a>
-                  {contact.phonesAlt.map((number) => (
-                    <a
-                      key={number}
-                      href={`tel:${number.replace(/[^+\d]/g, '')}`}
-                      className="mt-1.5 block pl-6 text-[0.8125rem] text-subtle transition-colors duration-300 hover:text-ink"
-                    >
-                      {number}
-                    </a>
-                  ))}
+                <li className="flex items-start gap-2.5 text-muted">
+                  <Phone className="mt-[0.3rem] h-3.5 w-3.5 shrink-0 text-subtle" aria-hidden="true" />
+                  <span className="flex flex-col gap-2">
+                    <PhoneActions number={contact.phone} />
+                    {contact.phonesAlt.map((number) => (
+                      <PhoneActions key={number} number={number} muted />
+                    ))}
+                  </span>
                 </li>
               ) : null}
               <li className="flex items-start gap-2.5 text-muted">
