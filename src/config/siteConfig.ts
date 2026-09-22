@@ -53,14 +53,14 @@ export const siteConfig = {
     description:
       'We build modern digital experiences, scalable software, and innovative technology solutions that help businesses grow.',
     /**
-     * Logo: the site renders an SVG wordmark built from `name` by default,
-     * so there is no image dependency. Point `imageSrc` at a file in /public
-     * to use a real logo instead.
+     * Two marks, because the brand's third square is ink on light and white
+     * on dark — a single file cannot serve both themes.
      */
     logo: {
-      imageSrc: null as string | null,
-      /** Letter(s) inside the logo glyph when no image is supplied. */
-      monogram: 'AHM',
+      src: {
+        light: '/logo-mark-light.png',
+        dark: '/logo-mark-dark.png',
+      },
       alt: 'AHM Systems logo',
     },
   },
